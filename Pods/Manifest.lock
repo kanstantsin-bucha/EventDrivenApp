@@ -1,0 +1,81 @@
+PODS:
+  - BuchaSwift (1.1.0)
+  - CDBKit (1.4.3):
+    - CDBKit/Array (= 1.4.3)
+    - CDBKit/Core (= 1.4.3)
+    - CDBKit/Localize (= 1.4.3)
+    - CDBKit/UI (= 1.4.3)
+  - CDBKit/Array (1.4.3)
+  - CDBKit/Core (1.4.3)
+  - CDBKit/Localize (1.4.3)
+  - CDBKit/UI (1.4.3)
+  - CDBPlacedUI (0.0.1)
+  - FlatButton (1.2)
+  - Google-Analytics-for-OS-X (1.1)
+  - GoogleAnalytics (3.17.0)
+  - LMGeocoderUniversal (1.2.2)
+  - LocationInfo (1.1.4):
+    - LocationInfo/AppleGeocoder (= 1.1.4)
+    - LocationInfo/AppleMap (= 1.1.4)
+    - LocationInfo/Core (= 1.1.4)
+    - LocationInfo/LMGeocoder (= 1.1.4)
+    - LocationInfo/StringConversion (= 1.1.4)
+  - LocationInfo/AppleGeocoder (1.1.4):
+    - LocationInfo/Core
+  - LocationInfo/AppleMap (1.1.4):
+    - LocationInfo/AppleGeocoder
+    - LocationInfo/Core
+  - LocationInfo/Core (1.1.4)
+  - LocationInfo/LMGeocoder (1.1.4):
+    - LMGeocoderUniversal
+    - LocationInfo/AppleGeocoder
+    - LocationInfo/Core
+  - LocationInfo/StringConversion (1.1.4):
+    - LocationInfo/Core
+  - MBProgressHUD (0.9.2)
+  - QMGeocoder (1.0.3):
+    - LMGeocoderUniversal
+    - LocationInfo
+    - LocationInfo/AppleGeocoder
+    - LocationInfo/LMGeocoder
+  - ReactiveReSwift (4.0.0)
+  - Realm (3.4.0):
+    - Realm/Headers (= 3.4.0)
+  - Realm/Headers (3.4.0)
+  - RealmSwift (3.4.0):
+    - Realm (= 3.4.0)
+  - RxSwift (4.1.2)
+
+DEPENDENCIES:
+  - BuchaSwift (~> 1.0)
+  - CDBKit (~> 1.4.1)
+  - CDBPlacedUI (~> 0.0)
+  - FlatButton (~> 1.2)
+  - Google-Analytics-for-OS-X (~> 1.1)
+  - GoogleAnalytics (= 3.17)
+  - LocationInfo (~> 1.1)
+  - MBProgressHUD (~> 0.8)
+  - QMGeocoder (~> 1.0)
+  - ReactiveReSwift (~> 4.0)
+  - RealmSwift (~> 3.0)
+  - RxSwift (~> 4.0)
+
+SPEC CHECKSUMS:
+  BuchaSwift: 8c74504b4483325ecc3759716d06fb68ea143982
+  CDBKit: aeb16954308b9a39c07bf1deaf32dc64074f0be2
+  CDBPlacedUI: b9b356fcb88036cf303c7970fee4ce5de44d5ca9
+  FlatButton: 9995b972cd520be091f0ba6b215b84cbe7d46fa8
+  Google-Analytics-for-OS-X: 66376760d74d980fd81ad48b125c5496d3d4402a
+  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
+  LMGeocoderUniversal: c093e8d7705745179ce93ff6d3c39e666e6bea67
+  LocationInfo: 459554282ac2e5924dd1e4bd49dbf65944c9be7a
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  QMGeocoder: 33f66b9c9567b6c1014796feccf701d3cb61dc84
+  ReactiveReSwift: b6187229efcc5ec819fb1d3d19716c231bcc0456
+  Realm: 9527c7baa2260f3a3aad6823d2d71cafff9b046b
+  RealmSwift: f40a747beaea1cadde7dcef41ee5a34b3001677b
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+
+PODFILE CHECKSUM: a3b8698f779ddc16373769487674fbe36542db36
+
+COCOAPODS: 1.4.0

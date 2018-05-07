@@ -1,0 +1,6 @@
+framework module BuchaSwift {
+  umbrella header "BuchaSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

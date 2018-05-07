@@ -1,0 +1,14 @@
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+CODE_SIGN_IDENTITY =
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/BuchaSwift" "${PODS_CONFIGURATION_BUILD_DIR}/CDBKit-macOS" "${PODS_CONFIGURATION_BUILD_DIR}/FlatButton" "${PODS_CONFIGURATION_BUILD_DIR}/Google-Analytics-for-OS-X" "${PODS_CONFIGURATION_BUILD_DIR}/LMGeocoderUniversal-macOS" "${PODS_CONFIGURATION_BUILD_DIR}/LocationInfo-macOS" "${PODS_CONFIGURATION_BUILD_DIR}/QMGeocoder-macOS" "${PODS_CONFIGURATION_BUILD_DIR}/ReactiveReSwift" "${PODS_CONFIGURATION_BUILD_DIR}/Realm" "${PODS_CONFIGURATION_BUILD_DIR}/RealmSwift" "${PODS_CONFIGURATION_BUILD_DIR}/RxSwift"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/BuchaSwift/BuchaSwift.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/CDBKit-macOS/CDBKit.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/FlatButton/FlatButton.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Google-Analytics-for-OS-X/GoogleAnalyticsTracker.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/LMGeocoderUniversal-macOS/LMGeocoderUniversal.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/LocationInfo-macOS/LocationInfo.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/QMGeocoder-macOS/QMGeocoder.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/ReactiveReSwift/ReactiveReSwift.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Realm/Realm.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/RealmSwift/RealmSwift.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/RxSwift/RxSwift.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -ObjC -framework "BuchaSwift" -framework "CDBKit" -framework "FlatButton" -framework "GoogleAnalyticsTracker" -framework "LMGeocoderUniversal" -framework "LocationInfo" -framework "QMGeocoder" -framework "ReactiveReSwift" -framework "Realm" -framework "RealmSwift" -framework "RxSwift"
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods
+
+DEBUG_INFORMATION_FORMAT = dwarf

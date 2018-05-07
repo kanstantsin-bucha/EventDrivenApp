@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6IY-0E-dcx">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="6IY-0E-dcx" secondAttribute="height" multiplier="1:1" id="rIi-35-LOt"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" id="2g2-Rn-jfR"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="6IY-0E-dcx" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="cnU-Bn-N5Q"/>
+                <constraint firstItem="6IY-0E-dcx" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="eQY-IC-7mR"/>
+                <constraint firstAttribute="trailing" secondItem="6IY-0E-dcx" secondAttribute="trailing" priority="250" id="gOE-jM-WSH"/>
+                <constraint firstAttribute="bottom" secondItem="6IY-0E-dcx" secondAttribute="bottom" id="rrL-wL-oVq"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6IY-0E-dcx" secondAttribute="trailing" id="ten-jZ-8V5"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="0"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+        </customView>
+        <collectionViewItem id="lhV-OT-7Se" customClass="GalleryViewItem" customModule="QromaTagMac" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="6IY-0E-dcx" id="LRu-cd-VFL"/>
+                <outlet property="view" destination="c22-O7-iKe" id="P0S-9Y-0v2"/>
+            </connections>
+        </collectionViewItem>
+    </objects>
+</document>

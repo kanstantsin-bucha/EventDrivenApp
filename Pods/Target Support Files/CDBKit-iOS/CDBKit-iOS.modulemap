@@ -1,0 +1,6 @@
+framework module CDBKit {
+  umbrella header "CDBKit-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

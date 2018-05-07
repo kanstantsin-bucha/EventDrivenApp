@@ -1,0 +1,6 @@
+framework module Pods_EventDrivenAppIosPods_EventDrivenAppIos {
+  umbrella header "Pods-EventDrivenAppIosPods-EventDrivenAppIos-umbrella.h"
+
+  export *
+  module * { export * }
+}

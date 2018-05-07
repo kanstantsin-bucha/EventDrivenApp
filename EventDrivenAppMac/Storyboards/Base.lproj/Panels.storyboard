@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Text Editor Panel-->
+        <scene sceneID="cL3-1T-mDZ">
+            <objects>
+                <viewController storyboardIdentifier="textEditor" id="7sJ-3a-S1s" customClass="TextEditorPanel" customModule="EventDrivenAppMac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="ZNE-x2-nMD">
+                        <rect key="frame" x="0.0" y="0.0" width="520" height="295"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView horizontalCompressionResistancePriority="250" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ns-3k-AK3">
+                                <rect key="frame" x="8" y="8" width="510" height="244"/>
+                                <clipView key="contentView" id="U75-nm-G0w">
+                                    <rect key="frame" x="0.0" y="0.0" width="510" height="244"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" smartInsertDelete="YES" id="aZY-hB-GUZ" userLabel="Text Editor" customClass="QMTextView" customModule="EventDrivenAppMac" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="510" height="244"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" name="MainBackgroundDark"/>
+                                            <size key="minSize" width="510" height="244"/>
+                                            <size key="maxSize" width="951" height="10000000"/>
+                                            <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="insertionPointColor">
+                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                                    <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <outlet property="delegate" destination="7sJ-3a-S1s" id="kIC-MQ-fgI"/>
+                                            </connections>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="MainBackgroundDark"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="fOf-r5-Orb">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Kct-AP-eXD">
+                                    <rect key="frame" x="494" y="0.0" width="16" height="244"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <box boxType="custom" translatesAutoresizingMaskIntoConstraints="NO" id="GwG-Ui-wQF" userLabel="Line">
+                                <rect key="frame" x="0.0" y="260" width="520" height="1"/>
+                                <view key="contentView" id="D4u-qV-PrE">
+                                    <rect key="frame" x="1" y="1" width="518" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="FYL-h5-87a"/>
+                                    <constraint firstAttribute="height" constant="1" id="kMM-VS-RW3"/>
+                                </constraints>
+                                <color key="borderColor" name="SplitLineColor"/>
+                            </box>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YI5-gH-RZG" customClass="FlatButton" customModule="FlatButton">
+                                <rect key="frame" x="288" y="268" width="100" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="sBN-jR-Tek"/>
+                                </constraints>
+                                <buttonCell key="cell" type="roundRect" title="Help" bezelStyle="roundedRect" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QI9-gS-wHz">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="systemBold"/>
+                                </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
+                                        <color key="value" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.16078431372549018" green="0.57647058823529407" blue="0.98431372549019602" alpha="1" colorSpace="deviceRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeButtonColor">
+                                        <color key="value" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="reloadDidClick:" target="7sJ-3a-S1s" id="KWu-4H-eEq"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wj2-3Q-6j8" customClass="FlatButton" customModule="FlatButton">
+                                <rect key="frame" x="404" y="268" width="100" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="U2b-Av-2Pd"/>
+                                </constraints>
+                                <buttonCell key="cell" type="roundRect" title="Save" bezelStyle="roundedRect" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TR8-hN-tSb">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="systemBold"/>
+                                </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.16078431369999999" green="0.57647058819999997" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeButtonColor">
+                                        <color key="value" red="0.14117647059999999" green="0.5568627451" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveDidClick:" target="7sJ-3a-S1s" id="Iqe-E7-nn1"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="5fT-Ne-Q4t">
+                                <rect key="frame" x="52" y="269" width="222" height="18"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Add, edit or delete names and separate each with a carriage return." id="OzY-er-SPy">
+                                    <font key="font" metaFont="systemBold" size="14"/>
+                                    <color key="textColor" name="MainTextBlue"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rH2-Ve-aHj" customClass="QMButton" customModule="EventDrivenAppMac" customModuleProvider="target">
+                                <rect key="frame" x="18" y="269" width="22" height="18"/>
+                                <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="FRq-W2-3j1">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="switchDidClick:" target="7sJ-3a-S1s" id="lHv-ew-5OI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="2Ns-3k-AK3" firstAttribute="top" secondItem="GwG-Ui-wQF" secondAttribute="bottom" constant="8" id="2pU-WA-vpd"/>
+                            <constraint firstItem="GwG-Ui-wQF" firstAttribute="top" secondItem="5fT-Ne-Q4t" secondAttribute="bottom" constant="8" id="7jb-gD-nlP"/>
+                            <constraint firstAttribute="trailing" secondItem="2Ns-3k-AK3" secondAttribute="trailing" constant="2" id="FBl-3G-OMV"/>
+                            <constraint firstItem="5fT-Ne-Q4t" firstAttribute="centerY" secondItem="rH2-Ve-aHj" secondAttribute="centerY" id="G3M-Bd-feM"/>
+                            <constraint firstItem="5fT-Ne-Q4t" firstAttribute="top" secondItem="ZNE-x2-nMD" secondAttribute="top" constant="8" id="L9A-RD-HOK"/>
+                            <constraint firstItem="2Ns-3k-AK3" firstAttribute="leading" secondItem="ZNE-x2-nMD" secondAttribute="leading" constant="8" id="N4D-d0-FC8"/>
+                            <constraint firstItem="YI5-gH-RZG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5fT-Ne-Q4t" secondAttribute="trailing" constant="16" id="XpM-5E-8TZ"/>
+                            <constraint firstAttribute="trailing" secondItem="GwG-Ui-wQF" secondAttribute="trailing" id="ZyI-N0-OhL"/>
+                            <constraint firstItem="GwG-Ui-wQF" firstAttribute="leading" secondItem="ZNE-x2-nMD" secondAttribute="leading" id="f3c-63-pHk"/>
+                            <constraint firstAttribute="trailing" secondItem="Wj2-3Q-6j8" secondAttribute="trailing" constant="16" id="l0a-Bg-dBf"/>
+                            <constraint firstItem="5fT-Ne-Q4t" firstAttribute="leading" secondItem="rH2-Ve-aHj" secondAttribute="trailing" constant="16" id="ljf-uC-HX8"/>
+                            <constraint firstItem="Wj2-3Q-6j8" firstAttribute="leading" secondItem="YI5-gH-RZG" secondAttribute="trailing" constant="16" id="lq1-FS-Wcb"/>
+                            <constraint firstItem="YI5-gH-RZG" firstAttribute="centerY" secondItem="5fT-Ne-Q4t" secondAttribute="centerY" id="pTo-UK-5jP"/>
+                            <constraint firstItem="2Ns-3k-AK3" firstAttribute="leading" secondItem="rH2-Ve-aHj" secondAttribute="leading" constant="-12" id="vIU-LN-boX"/>
+                            <constraint firstAttribute="bottom" secondItem="2Ns-3k-AK3" secondAttribute="bottom" constant="8" id="vtl-lh-egE"/>
+                            <constraint firstItem="Wj2-3Q-6j8" firstAttribute="centerY" secondItem="YI5-gH-RZG" secondAttribute="centerY" id="wjc-c6-myV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTitle" destination="5fT-Ne-Q4t" id="Ubp-KJ-2aa"/>
+                        <outlet property="reloadButton" destination="YI5-gH-RZG" id="H89-Bm-Ijn"/>
+                        <outlet property="saveButton" destination="Wj2-3Q-6j8" id="g4g-on-ein"/>
+                        <outlet property="switchButton" destination="rH2-Ve-aHj" id="U9i-ik-2gh"/>
+                        <outlet property="textEditor" destination="aZY-hB-GUZ" id="ZtD-L2-Wv8"/>
+                    </connections>
+                </viewController>
+                <customObject id="NLy-NB-7Mo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2857" y="-927.5"/>
+        </scene>
+        <!--Settings Panel-->
+        <scene sceneID="8gw-Xx-qaf">
+            <objects>
+                <viewController storyboardIdentifier="settings" id="IQa-sr-X6E" customClass="SettingsPanel" customModule="EventDrivenAppMac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="EKn-sv-AUe">
+                        <rect key="frame" x="0.0" y="0.0" width="520" height="472"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box boxType="custom" translatesAutoresizingMaskIntoConstraints="NO" id="dbC-HF-Iv5" userLabel="Line">
+                                <rect key="frame" x="0.0" y="437" width="520" height="1"/>
+                                <view key="contentView" id="VAs-Al-nEW">
+                                    <rect key="frame" x="1" y="1" width="518" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="HXQ-qX-H2H"/>
+                                </constraints>
+                                <color key="borderColor" name="SplitLineColor"/>
+                            </box>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FNl-KY-YOW" userLabel="Cancel Button" customClass="FlatButton" customModule="FlatButton">
+                                <rect key="frame" x="288" y="445" width="100" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="lbT-BZ-glI"/>
+                                </constraints>
+                                <buttonCell key="cell" type="roundRect" title="Help" bezelStyle="roundedRect" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="C6A-YC-d3P">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="systemBold"/>
+                                </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
+                                        <color key="value" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.16078431372549018" green="0.57647058823529407" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeButtonColor">
+                                        <color key="value" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelDidClick:" target="IQa-sr-X6E" id="iBb-DC-Ptn"/>
+                                </connections>
+                            </button>
+                            <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Gnn-Gt-KvA">
+                                <rect key="frame" x="16" y="347" width="488" height="82"/>
+                                <view key="contentView" id="Xb1-Gz-KHP">
+                                    <rect key="frame" x="0.0" y="0.0" width="488" height="82"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lnx-Oe-mkA">
+                                            <rect key="frame" x="6" y="56" width="113" height="18"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="FILE HANDLING" id="mnd-Ld-jdX">
+                                                <font key="font" metaFont="systemBold" size="14"/>
+                                                <color key="textColor" name="MainTextLight"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0cq-eI-w93" customClass="QMButton" customModule="EventDrivenAppMac" customModuleProvider="target">
+                                            <rect key="frame" x="24" y="8" width="191" height="32"/>
+                                            <buttonCell key="cell" type="bevel" title="Show Backups Folder in Finder" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="PUF-45-GLm">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                    <color key="value" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="showBackupsFolderDidClick:" target="IQa-sr-X6E" id="kKt-ZR-RlT"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lnx-Oe-mkA" firstAttribute="leading" secondItem="Xb1-Gz-KHP" secondAttribute="leading" constant="8" id="DH6-HF-j3x"/>
+                                        <constraint firstItem="0cq-eI-w93" firstAttribute="top" secondItem="lnx-Oe-mkA" secondAttribute="bottom" constant="16" id="SDb-nq-R1I"/>
+                                        <constraint firstItem="0cq-eI-w93" firstAttribute="leading" secondItem="lnx-Oe-mkA" secondAttribute="leading" constant="16" id="YpQ-g8-bUV"/>
+                                        <constraint firstAttribute="bottom" secondItem="0cq-eI-w93" secondAttribute="bottom" constant="8" id="uOV-O8-3dW"/>
+                                        <constraint firstItem="lnx-Oe-mkA" firstAttribute="top" secondItem="Xb1-Gz-KHP" secondAttribute="top" constant="8" id="y5s-lP-K8b"/>
+                                    </constraints>
+                                </view>
+                            </box>
+                            <box verticalHuggingPriority="249" boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="ReE-rx-Ovo">
+                                <rect key="frame" x="16" y="233" width="488" height="106"/>
+                                <view key="contentView" id="mSY-1n-j1F">
+                                    <rect key="frame" x="0.0" y="0.0" width="488" height="106"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PSX-RQ-ce2">
+                                            <rect key="frame" x="6" y="80" width="83" height="18"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="FILE TYPES" id="G4G-Ns-znt">
+                                                <font key="font" metaFont="systemBold" size="14"/>
+                                                <color key="textColor" name="MainTextLight"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="kQC-vI-ZvT">
+                                            <rect key="frame" x="22" y="30" width="441" height="34"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="App supports several image formats. Use the check boxes below to exclude some file types." id="q3z-Ov-4KE">
+                                                <font key="font" metaFont="systemBold"/>
+                                                <color key="textColor" name="MainTextDark"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tTR-GC-wcy" customClass="QMButton" customModule="EventDrivenAppMac" customModuleProvider="target">
+                                            <rect key="frame" x="22" y="6" width="52" height="18"/>
+                                            <buttonCell key="cell" type="check" title="DNG" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Ixt-za-Qt6">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="systemBold"/>
+                                            </buttonCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                    <color key="value" red="0.21960784310000001" green="0.62352941179999999" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="fileTypesDidClick:" target="IQa-sr-X6E" id="Cfz-O0-HHs"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rtm-xG-2RJ" customClass="QMButton" customModule="EventDrivenAppMac" customModuleProvider="target">
+                                            <rect key="frame" x="100" y="6" width="49" height="18"/>
+                                            <buttonCell key="cell" type="check" title="JPG" bezelStyle="regularSquare" imagePosition="left" inset="2" id="KA8-yM-zRB">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="systemBold"/>
+                                            </buttonCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                    <color key="value" red="0.21960784310000001" green="0.62352941179999999" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ljd-15-O1Y" customClass="QMButton" customModule="EventDrivenAppMac" customModuleProvider="target">
+                                            <rect key="frame" x="175" y="6" width="51" height="18"/>
+                                            <buttonCell key="cell" type="check" title="PNG" bezelStyle="regularSquare" imagePosition="left" inset="2" id="UOb-0Z-qpT">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="systemBold"/>
+                                            </buttonCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                    <color key="value" red="0.21960784310000001" green="0.62352941179999999" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3jo-60-joO" customClass="QMButton" customModule="EventDrivenAppMac" customModuleProvider="target">
+                                            <rect key="frame" x="252" y="6" width="50" height="18"/>
+                                            <buttonCell key="cell" type="check" title="TIFF" bezelStyle="regularSquare" imagePosition="left" inset="2" id="8t9-RQ-4Nc">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="systemBold"/>
+                                            </buttonCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                    <color key="value" red="0.21960784310000001" green="0.62352941179999999" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ljd-15-O1Y" firstAttribute="centerY" secondItem="tTR-GC-wcy" secondAttribute="centerY" id="0Gf-Kz-nDI"/>
+                                        <constraint firstItem="tTR-GC-wcy" firstAttribute="leading" secondItem="kQC-vI-ZvT" secondAttribute="leading" id="29y-bu-sge"/>
+                                        <constraint firstItem="PSX-RQ-ce2" firstAttribute="top" secondItem="mSY-1n-j1F" secondAttribute="top" constant="8" id="2Q1-DN-HYC"/>
+                                        <constraint firstItem="3jo-60-joO" firstAttribute="leading" secondItem="ljd-15-O1Y" secondAttribute="trailing" constant="30" id="68f-GK-7Zs"/>
+                                        <constraint firstItem="rtm-xG-2RJ" firstAttribute="leading" secondItem="tTR-GC-wcy" secondAttribute="trailing" constant="30" id="MbZ-3u-sAD"/>
+                                        <constraint firstItem="kQC-vI-ZvT" firstAttribute="leading" secondItem="PSX-RQ-ce2" secondAttribute="leading" constant="16" id="Oyl-cy-e1K"/>
+                                        <constraint firstItem="3jo-60-joO" firstAttribute="centerY" secondItem="tTR-GC-wcy" secondAttribute="centerY" id="W8h-yr-te2"/>
+                                        <constraint firstItem="ljd-15-O1Y" firstAttribute="leading" secondItem="rtm-xG-2RJ" secondAttribute="trailing" constant="30" id="YJ7-Ko-H2n"/>
+                                        <constraint firstItem="rtm-xG-2RJ" firstAttribute="centerY" secondItem="tTR-GC-wcy" secondAttribute="centerY" id="YKr-WO-iIx"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3jo-60-joO" secondAttribute="trailing" constant="8" id="i4N-tW-leu"/>
+                                        <constraint firstItem="tTR-GC-wcy" firstAttribute="top" secondItem="kQC-vI-ZvT" secondAttribute="bottom" constant="8" id="j89-Nf-dgM"/>
+                                        <constraint firstItem="kQC-vI-ZvT" firstAttribute="top" secondItem="PSX-RQ-ce2" secondAttribute="bottom" constant="16" id="omb-Lz-XTE"/>
+                                        <constraint firstAttribute="bottom" secondItem="tTR-GC-wcy" secondAttribute="bottom" constant="8" id="rmM-Wy-g4D"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kQC-vI-ZvT" secondAttribute="trailing" constant="8" id="vDh-3l-isX"/>
+                                        <constraint firstItem="PSX-RQ-ce2" firstAttribute="leading" secondItem="mSY-1n-j1F" secondAttribute="leading" constant="8" id="wkg-rg-Hxn"/>
+                                    </constraints>
+                                </view>
+                            </box>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="suS-5n-iLk" customClass="FlatButton" customModule="FlatButton">
+                                <rect key="frame" x="404" y="445" width="100" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="AkA-al-THw"/>
+                                </constraints>
+                                <buttonCell key="cell" type="roundRect" title="Save" bezelStyle="roundedRect" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="720-bT-2ET">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="systemBold"/>
+                                </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.16078431369999999" green="0.57647058819999997" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeButtonColor">
+                                        <color key="value" red="0.14117647059999999" green="0.5568627451" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveDidClick:" target="IQa-sr-X6E" id="7KU-mf-xHx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ReE-rx-Ovo" firstAttribute="trailing" secondItem="Gnn-Gt-KvA" secondAttribute="trailing" id="0B1-bs-7m6"/>
+                            <constraint firstItem="Gnn-Gt-KvA" firstAttribute="top" secondItem="dbC-HF-Iv5" secondAttribute="bottom" constant="8" id="1WD-6r-3kM"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ReE-rx-Ovo" secondAttribute="bottom" priority="500" constant="8" id="3dm-4R-iHa"/>
+                            <constraint firstItem="suS-5n-iLk" firstAttribute="top" secondItem="EKn-sv-AUe" secondAttribute="top" constant="8" id="Kcv-ZN-srr"/>
+                            <constraint firstAttribute="trailing" secondItem="dbC-HF-Iv5" secondAttribute="trailing" id="Plx-so-jcy"/>
+                            <constraint firstItem="suS-5n-iLk" firstAttribute="leading" secondItem="FNl-KY-YOW" secondAttribute="trailing" constant="16" id="VGo-uH-UIV"/>
+                            <constraint firstItem="Gnn-Gt-KvA" firstAttribute="leading" secondItem="EKn-sv-AUe" secondAttribute="leading" constant="16" id="Wg5-nx-XF2"/>
+                            <constraint firstAttribute="trailing" secondItem="Gnn-Gt-KvA" secondAttribute="trailing" constant="16" id="ZyN-2m-GN4"/>
+                            <constraint firstItem="ReE-rx-Ovo" firstAttribute="leading" secondItem="Gnn-Gt-KvA" secondAttribute="leading" id="azZ-qT-Clz"/>
+                            <constraint firstItem="ReE-rx-Ovo" firstAttribute="top" secondItem="Gnn-Gt-KvA" secondAttribute="bottom" constant="8" id="bVG-hX-eDE"/>
+                            <constraint firstItem="dbC-HF-Iv5" firstAttribute="leading" secondItem="EKn-sv-AUe" secondAttribute="leading" id="c1f-oJ-t2c"/>
+                            <constraint firstItem="suS-5n-iLk" firstAttribute="centerY" secondItem="FNl-KY-YOW" secondAttribute="centerY" id="cnc-mL-qa3"/>
+                            <constraint firstAttribute="trailing" secondItem="suS-5n-iLk" secondAttribute="trailing" constant="16" id="dPz-DY-XQq"/>
+                            <constraint firstItem="dbC-HF-Iv5" firstAttribute="top" secondItem="suS-5n-iLk" secondAttribute="bottom" constant="8" id="pgO-h9-cim"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dngButton" destination="tTR-GC-wcy" id="Nfr-mB-j7H"/>
+                        <outlet property="jpgButton" destination="rtm-xG-2RJ" id="LcX-by-Z3D"/>
+                        <outlet property="pngButton" destination="ljd-15-O1Y" id="7nE-TN-uFY"/>
+                        <outlet property="tiffButton" destination="3jo-60-joO" id="cpa-fc-dfV"/>
+                    </connections>
+                </viewController>
+                <customObject id="MHc-De-1dQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2857" y="-1755"/>
+        </scene>
+        <!--Folders Panel-->
+        <scene sceneID="3VW-e4-mQF">
+            <objects>
+                <viewController storyboardIdentifier="folders" id="pTz-2c-bSx" customClass="FoldersPanel" customModule="EventDrivenAppMac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="uhE-7c-vef" customClass="DropView" customModule="EventDrivenAppMac" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="183" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bPX-Bo-xnb" customClass="QMButton" customModule="EventDrivenAppMac" customModuleProvider="target">
+                                <rect key="frame" x="8" y="275" width="35" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="M0f-yr-xLP"/>
+                                </constraints>
+                                <buttonCell key="cell" type="bevel" title="FOLD" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="k8l-dP-a24">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystemBold"/>
+                                </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="foldAllDidClicked:" target="pTz-2c-bSx" id="Wo7-33-bsU"/>
+                                </connections>
+                            </button>
+                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="20" horizontalPageScroll="10" verticalLineScroll="20" verticalPageScroll="10" usesPredominantAxisScrolling="NO" scrollerKnobStyle="dark" translatesAutoresizingMaskIntoConstraints="NO" id="k0m-Ci-Wvx">
+                                <rect key="frame" x="0.0" y="48" width="183" height="219"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="MHR-mC-vAd">
+                                    <rect key="frame" x="0.0" y="0.0" width="183" height="219"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="18" viewBased="YES" indentationPerLevel="8" outlineTableColumn="1Y3-xl-wrF" id="E8m-6W-fcG" customClass="QMOutlineView" customModule="EventDrivenAppMac" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="183" height="219"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="MainBackgroundDark"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn identifier="FolderTitle" width="180" minWidth="40" maxWidth="1000" id="1Y3-xl-wrF">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="YAJ-n1-ydc">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView identifier="FolderCell" id="uNm-Jl-AcU">
+                                                            <rect key="frame" x="1" y="1" width="180" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="AVf-mE-ElD">
+                                                                    <rect key="frame" x="-2" y="0.0" width="184" height="18"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="18" id="6Nl-xF-hbc"/>
+                                                                    </constraints>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Folder Name" id="5tv-j4-BLO">
+                                                                        <font key="font" metaFont="systemBold" size="16"/>
+                                                                        <color key="textColor" name="MainTextDark"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="AVf-mE-ElD" firstAttribute="leading" secondItem="uNm-Jl-AcU" secondAttribute="leading" id="3B5-ZS-JjW"/>
+                                                                <constraint firstItem="AVf-mE-ElD" firstAttribute="centerX" secondItem="uNm-Jl-AcU" secondAttribute="centerX" id="aLb-ih-yGz"/>
+                                                                <constraint firstItem="AVf-mE-ElD" firstAttribute="centerY" secondItem="uNm-Jl-AcU" secondAttribute="centerY" id="bHj-DB-Wla"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="textField" destination="AVf-mE-ElD" id="pkD-5l-hTF"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                        <tableCellView identifier="FolderCellWhiteText" id="O6I-S4-lbe">
+                                                            <rect key="frame" x="1" y="21" width="180" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="nPl-hl-os9">
+                                                                    <rect key="frame" x="-2" y="0.0" width="184" height="18"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="18" id="G4W-L1-loq"/>
+                                                                    </constraints>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Folder Name" id="dg9-fZ-QL9">
+                                                                        <font key="font" metaFont="systemBold" size="16"/>
+                                                                        <color key="textColor" name="FolderCellLightBlueText"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="nPl-hl-os9" firstAttribute="centerX" secondItem="O6I-S4-lbe" secondAttribute="centerX" id="EXs-sJ-fKI"/>
+                                                                <constraint firstItem="nPl-hl-os9" firstAttribute="leading" secondItem="O6I-S4-lbe" secondAttribute="leading" id="k4h-9y-LIS"/>
+                                                                <constraint firstItem="nPl-hl-os9" firstAttribute="centerY" secondItem="O6I-S4-lbe" secondAttribute="centerY" id="w0e-m1-R59"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="textField" destination="nPl-hl-os9" id="SO2-4b-a3x"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                            </tableColumns>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="disclosureOpenedImage" value="DisclosureOpened"/>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="disclosureClosedImage" value="DisclosureClosed"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="disclosureWidthCorrection">
+                                                    <real key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cellsLeadingSpace">
+                                                    <real key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <outlet property="dataSource" destination="pTz-2c-bSx" id="fzZ-vj-kDB"/>
+                                                <outlet property="delegate" destination="pTz-2c-bSx" id="wXI-SH-u4r"/>
+                                                <outlet property="menu" destination="HmP-Tw-GGn" id="cP7-9G-4RO"/>
+                                            </connections>
+                                        </outlineView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Em6-ZX-NZL">
+                                    <rect key="frame" x="0.0" y="243" width="167" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="IRb-22-K3v">
+                                    <rect key="frame" x="167" y="0.0" width="16" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4ib-U7-8z3">
+                                <rect key="frame" x="53" y="275" width="65" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="FOLDERS" id="ILL-NZ-aBK">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="MainTextDark"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="sl4-dQ-xy0">
+                                <rect key="frame" x="76" y="8" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="WvK-fk-eum"/>
+                                    <constraint firstAttribute="width" constant="32" id="dxE-u6-a8D"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="PlusSign" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="UUN-PF-H3a">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="addFolderDidClick:" target="pTz-2c-bSx" id="3jJ-si-Poz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4ib-U7-8z3" secondAttribute="trailing" constant="65" id="0aY-l8-u9M"/>
+                            <constraint firstAttribute="trailing" secondItem="k0m-Ci-Wvx" secondAttribute="trailing" id="3Qe-n5-4y5"/>
+                            <constraint firstItem="k0m-Ci-Wvx" firstAttribute="top" secondItem="4ib-U7-8z3" secondAttribute="bottom" constant="8" id="9bG-ii-uHS"/>
+                            <constraint firstAttribute="bottom" secondItem="sl4-dQ-xy0" secondAttribute="bottom" constant="8" id="Ehw-cq-aDn"/>
+                            <constraint firstItem="sl4-dQ-xy0" firstAttribute="top" secondItem="k0m-Ci-Wvx" secondAttribute="bottom" constant="8" id="Jll-Uu-Y63"/>
+                            <constraint firstItem="4ib-U7-8z3" firstAttribute="top" secondItem="uhE-7c-vef" secondAttribute="top" constant="8" id="Ou8-UR-cxF"/>
+                            <constraint firstItem="bPX-Bo-xnb" firstAttribute="leading" secondItem="uhE-7c-vef" secondAttribute="leading" constant="8" id="ctc-V8-73v"/>
+                            <constraint firstItem="k0m-Ci-Wvx" firstAttribute="leading" secondItem="uhE-7c-vef" secondAttribute="leading" id="hwT-Dl-kRn"/>
+                            <constraint firstItem="sl4-dQ-xy0" firstAttribute="centerX" secondItem="uhE-7c-vef" secondAttribute="centerX" id="moI-AC-cvx"/>
+                            <constraint firstItem="4ib-U7-8z3" firstAttribute="leading" secondItem="bPX-Bo-xnb" secondAttribute="trailing" constant="12" id="yjQ-4N-zt2"/>
+                            <constraint firstItem="4ib-U7-8z3" firstAttribute="bottom" secondItem="bPX-Bo-xnb" secondAttribute="bottom" id="zat-Zq-ylF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="foldButton" destination="bPX-Bo-xnb" id="JIF-pE-owb"/>
+                        <outlet property="foldersList" destination="E8m-6W-fcG" id="VMH-Tn-73L"/>
+                        <outlet property="tableRowView" destination="tNF-yP-244" id="9Vb-7e-E2n"/>
+                    </connections>
+                </viewController>
+                <customObject id="YV6-eX-VZs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu id="HmP-Tw-GGn">
+                    <items>
+                        <menuItem title="Delete" id="Ba1-NL-97L">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="deleteMenuItemDidClick:" target="pTz-2c-bSx" id="dS7-HZ-wfk"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                </menu>
+                <customView id="tNF-yP-244" userLabel="QMTableRowView" customClass="QMTableRowView" customModule="EventDrivenAppMac" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="163" height="96"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                            <color key="value" red="0.16078431369999999" green="0.57647058819999997" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="rootColor">
+                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="nestedColor">
+                            <color key="value" red="0.4549019608" green="0.72941176470000002" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customView>
+            </objects>
+            <point key="canvasLocation" x="-3342" y="-629"/>
+        </scene>
+        <!--None View Panel-->
+        <scene sceneID="KNx-iW-maD">
+            <objects>
+                <viewController storyboardIdentifier="none" id="m76-eg-I9E" userLabel="None View Panel" sceneMemberID="viewController">
+                    <view key="view" id="PyS-ry-J5q">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="thI-Ig-Kt2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3522.5" y="-1177.5"/>
+        </scene>
+        <!--Gallery Panel-->
+        <scene sceneID="yHQ-g0-3Z8">
+            <objects>
+                <viewController storyboardIdentifier="gallery" id="jGy-xD-a1N" customClass="GalleryPanel" customModule="EventDrivenAppMac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="bcP-4v-uxr" customClass="KeyCaptureView" customModule="EventDrivenAppMac" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="520" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box boxType="custom" translatesAutoresizingMaskIntoConstraints="NO" id="oLd-mt-FvB" userLabel="Line">
+                                <rect key="frame" x="0.0" y="265" width="520" height="1"/>
+                                <view key="contentView" id="aCU-li-MAg">
+                                    <rect key="frame" x="1" y="1" width="518" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="igr-29-CrU"/>
+                                </constraints>
+                                <color key="borderColor" name="SplitLineColor"/>
+                            </box>
+                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UIQ-Bb-38I">
+                                <rect key="frame" x="398" y="274" width="104" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Z84-24-M5Z"/>
+                                </constraints>
+                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="100" maxValue="200" doubleValue="150" tickMarkPosition="above" sliderType="linear" id="JGf-Xz-r7c"/>
+                                <connections>
+                                    <action selector="sliderDidSlide:" target="jGy-xD-a1N" id="BDz-Ws-fTf"/>
+                                </connections>
+                            </slider>
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="sC7-f0-0oT">
+                                <rect key="frame" x="16" y="8" width="496" height="249"/>
+                                <clipView key="contentView" drawsBackground="NO" id="sTC-SR-ZT3">
+                                    <rect key="frame" x="0.0" y="0.0" width="496" height="249"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView selectable="YES" allowsMultipleSelection="YES" id="hup-CH-qrR" customClass="QMCollectionView" customModule="EventDrivenAppMac" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="496" height="249"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewGridLayout key="collectionViewLayout" id="0Tl-Lv-HCr">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumInteritemSpacing">
+                                                        <integer key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumLineSpacing">
+                                                        <integer key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </collectionViewGridLayout>
+                                            <color key="primaryBackgroundColor" name="MainBackgroundDark"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="NO"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <outlet property="dataSource" destination="jGy-xD-a1N" id="Chg-M0-mMd"/>
+                                                <outlet property="delegate" destination="jGy-xD-a1N" id="zQW-xl-RbN"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="MainBackgroundDark"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="jSb-0a-1C3">
+                                    <rect key="frame" x="-100" y="-100" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="2fe-2E-Dgw">
+                                    <rect key="frame" x="729" y="0.0" width="16" height="209"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qAg-HE-PJI">
+                                <rect key="frame" x="195" y="274" width="130" height="18"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="4 images selected" id="kuK-wi-2Tv">
+                                    <font key="font" metaFont="systemBold" size="14"/>
+                                    <color key="textColor" name="MainTextBlue"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="sC7-f0-0oT" firstAttribute="top" secondItem="oLd-mt-FvB" secondAttribute="bottom" constant="8" id="4AM-2u-n3R"/>
+                            <constraint firstItem="qAg-HE-PJI" firstAttribute="top" secondItem="bcP-4v-uxr" secondAttribute="top" constant="8" id="5NX-2b-35o"/>
+                            <constraint firstItem="oLd-mt-FvB" firstAttribute="leading" secondItem="bcP-4v-uxr" secondAttribute="leading" id="6h0-Xi-afD"/>
+                            <constraint firstItem="UIQ-Bb-38I" firstAttribute="centerY" secondItem="qAg-HE-PJI" secondAttribute="centerY" id="8nd-1B-tiI"/>
+                            <constraint firstAttribute="trailing" secondItem="sC7-f0-0oT" secondAttribute="trailing" constant="8" id="NDm-US-4aU"/>
+                            <constraint firstAttribute="trailing" secondItem="UIQ-Bb-38I" secondAttribute="trailing" constant="20" id="gUb-hg-gsg"/>
+                            <constraint firstAttribute="trailing" secondItem="oLd-mt-FvB" secondAttribute="trailing" id="hGp-7b-b8t"/>
+                            <constraint firstItem="oLd-mt-FvB" firstAttribute="top" secondItem="qAg-HE-PJI" secondAttribute="bottom" constant="8" id="j1N-72-Uhl"/>
+                            <constraint firstItem="qAg-HE-PJI" firstAttribute="centerX" secondItem="bcP-4v-uxr" secondAttribute="centerX" id="ktG-nZ-RtN"/>
+                            <constraint firstItem="sC7-f0-0oT" firstAttribute="leading" secondItem="bcP-4v-uxr" secondAttribute="leading" constant="16" id="pcs-KQ-9Pl"/>
+                            <constraint firstAttribute="bottom" secondItem="sC7-f0-0oT" secondAttribute="bottom" constant="8" id="rTU-EB-Lq0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTitle" destination="qAg-HE-PJI" id="SyZ-eM-Orm"/>
+                        <outlet property="imagesCollection" destination="hup-CH-qrR" id="suW-42-viG"/>
+                        <outlet property="sizeSlider" destination="UIQ-Bb-38I" id="QF7-vC-7ZH"/>
+                    </connections>
+                </viewController>
+                <customObject id="htd-eN-nXs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2857" y="-1287"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="DisclosureClosed" width="15" height="16"/>
+        <image name="DisclosureOpened" width="16" height="15"/>
+        <image name="PlusSign" width="26" height="26"/>
+        <namedColor name="FolderCellLightBlueText">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainBackgroundDark">
+            <color red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainTextBlue">
+            <color red="0.21999999880000001" green="0.62400001289999996" blue="0.97299999000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainTextDark">
+            <color red="0.60799998040000003" green="0.60799998040000003" blue="0.60799998040000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainTextLight">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SplitLineColor">
+            <color red="0.59200000760000004" green="0.59200000760000004" blue="0.59200000760000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

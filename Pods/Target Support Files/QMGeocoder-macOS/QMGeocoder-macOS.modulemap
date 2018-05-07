@@ -1,0 +1,6 @@
+framework module QMGeocoder {
+  umbrella header "QMGeocoder-macOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
