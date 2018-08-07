@@ -52,6 +52,24 @@ let dataReducer: Reducer<DataState> = { action, state in
 //MARK: - store -
 
 class DataReducer {
+    
+    //MARK: Settings Load / Store Logic
+    
+    static func loadSettings() -> SettingsData {
+        
+        var settingsStorage: SettingsStorage? = nil
+        
+        let realm = try! Realm()
+        settingsStorage = realm.objects(SettingsStorage.self).first
+        
+        guard let validStorage = settingsStorage else {
+            
+            return SettingsData(contactsLookupEnabled: false)
+        }
+        
+        let result = SettingsData(using: validStorage)
+        return result
+    }
 
     static func store(settings: SettingsData) {
         

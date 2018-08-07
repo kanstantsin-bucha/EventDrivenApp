@@ -32,7 +32,7 @@ let integration: IntegrationInterface = Integration()
 
 let dataStore = Store(reducer: dataReducer,
                       observable: ObservableProperty(DataState(counter: 0,
-                                                               settings: SettingsData())))
+                                                               settings: DataReducer.loadSettings())))
 
 let interfaceStore = Store(reducer: interfaceReducer,
                            observable: ObservableProperty(InterfaceState(viewControllerBackground: .gray)))

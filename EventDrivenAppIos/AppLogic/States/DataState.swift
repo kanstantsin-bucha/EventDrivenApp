@@ -34,7 +34,22 @@ struct DataState {
 
 class SettingsData {
     
-    let contactsLookupEnabled: Bool = false
+    let contactsLookupEnabled: Bool
     
+    init(contactsLookupEnabled: Bool) {
+        
+        self.contactsLookupEnabled = contactsLookupEnabled
+    }
+    
+     init(_ precedent: SettingsData,
+          contactsLookupEnabled: Bool? = nil) {
+        
+        self.contactsLookupEnabled = contactsLookupEnabled ?? precedent.contactsLookupEnabled
+    }
+    
+    init(using storage: SettingsStorage) {
+        
+        self.contactsLookupEnabled = storage.contactsLookupEnabled
+    }
 }
 

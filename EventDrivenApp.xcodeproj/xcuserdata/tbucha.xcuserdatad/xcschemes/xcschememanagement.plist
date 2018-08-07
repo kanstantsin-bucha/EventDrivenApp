@@ -12,12 +12,12 @@
 		<key>EventDrivenAppIos.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>21</integer>
+			<integer>28</integer>
 		</dict>
 		<key>EventDrivenAppMac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>20</integer>
+			<integer>27</integer>
 		</dict>
 	</dict>
 </dict>
