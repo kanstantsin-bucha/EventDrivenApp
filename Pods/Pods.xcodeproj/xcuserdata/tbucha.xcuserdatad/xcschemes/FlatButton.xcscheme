@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "77BF8100EB5B8D289AB3A317"
+               BlueprintIdentifier = "000000003AF0"
                BlueprintName = "FlatButton"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "FlatButton.framework">

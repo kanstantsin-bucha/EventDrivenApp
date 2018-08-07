@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0E159500133AF9CB5389A200"
+               BlueprintIdentifier = "000000003DF0"
                BuildableName = "LMGeocoderUniversal.framework"
                BlueprintName = "LMGeocoderUniversal-iOS"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0E159500133AF9CB5389A200"
+            BlueprintIdentifier = "000000003DF0"
             BuildableName = "LMGeocoderUniversal.framework"
             BlueprintName = "LMGeocoderUniversal-iOS"
             ReferencedContainer = "container:Pods.xcodeproj">

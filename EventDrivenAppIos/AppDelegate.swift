@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  EventDrivenAppIos
+//  EventDrivenApp
 //
-//  Created by Kanstantsin Bucha on 5/6/18.
+//  Created by Kanstantsin Bucha on 6/29/18.
 //  Copyright © 2018 Truebucha. All rights reserved.
 //
 
@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+//        integration.enable(launchOptions: launchOptions)
+        
         return true
     }
 

@@ -10,20 +10,34 @@ use_frameworks!
 
 workspace 'EventDrivenApp.xcworkspace'
 
-development_pods = false
+development_pods = true
+# list of 3.3 swif targets .
+swift3Targets = []
+swift3InheritanceTargets = ['NohanaImagePicker']
 
 post_install do |installer|
     
     installer.pods_project.targets.each do |target|
-        if ['EventDrivenApp'].include?(target.name)
+        
+        if swift3InheritanceTargets.include? (target.name)
+            
             target.build_configurations.each do |config|
-                config.build_settings['SWIFT_VERSION'] = '4.0'
-            end
-        else
-            target.build_configurations.each do |config|
-                config.build_settings['SWIFT_VERSION'] = '3.2'
+                config.build_settings['SWIFT_SWIFT3_OBJC_INFERENCE'] = 'On'
             end
         end
+        
+        if swift3Targets.include? (target.name)
+            
+            target.build_configurations.each do |config|
+                config.build_settings['SWIFT_VERSION'] = '3.3'
+            end
+            else
+            
+            target.build_configurations.each do |config|
+                config.build_settings['SWIFT_VERSION'] = '4.1'
+            end
+        end
+        
     end
     
     # installer.pods_project.targets.each do |target|
@@ -31,17 +45,17 @@ post_install do |installer|
     #        target.build_settings(configuration.name)['ACTIVE_ARCH_ONLY'] = 'NO'
     #    end
     # end
-
+    
     
     puts("Update debug pod settings to speed up build time")
     Dir.glob(File.join("Pods", "**", "Pods*{debug,Private}.xcconfig")).each do |file|
         File.open(file, 'a') { |f| f.puts "\nDEBUG_INFORMATION_FORMAT = dwarf" }
     end
-
+    
     next if development_pods
-
+    
     puts("Update copy pod resources only once to speed up build time")
-
+    
     Dir.glob(installer.sandbox.target_support_files_root + "Pods-*/*.sh").each do |script|
         flag_name = File.basename(script, ".sh") + "-Installation-Flag"
         folder = "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
@@ -50,10 +64,11 @@ post_install do |installer|
         content.gsub!(/set -e/, "set -e\nKG_FILE=\"#{file}\"\nif [ -f \"$KG_FILE\" ]; then exit 0; fi\nmkdir -p \"#{folder}\"\ntouch \"$KG_FILE\"")
         File.write(script, content)
     end
-
+    
     puts("Please clean project after pod install/update = CMD+SHIFT+K in xCode")
 end
 
+# ================= Truebucha ================
 # EventDrivenApp Mac Goes Below
 
 abstract_target :'EventDrivenAppMacPods' do
@@ -65,8 +80,6 @@ abstract_target :'EventDrivenAppMacPods' do
     pod 'CDBKit', '~> 1.4.1'
     pod 'BuchaSwift', '~> 1.0'
     pod 'FlatButton', '~> 1.2'
-    
-    # pod 'HexColors', '~> 6.0'
   
     pod 'Google-Analytics-for-OS-X', '~> 1.1'
     
@@ -74,7 +87,7 @@ abstract_target :'EventDrivenAppMacPods' do
     pod 'ReactiveReSwift', '~> 4.0'
     pod 'RealmSwift', '~> 3.0'
     
-    pod 'QMGeocoder', '~> 1.0'
+    pod 'QMGeocoder'
     
     pod 'LocationInfo', '~> 1.1'
     
@@ -83,6 +96,7 @@ abstract_target :'EventDrivenAppMacPods' do
     end
 end
 
+# ================= Truebucha ================
 # EventDrivenApp iOS Goes Below
 
 platform :ios, '10.0'
@@ -90,12 +104,23 @@ use_frameworks!
 
 abstract_target 'EventDrivenAppIosPods' do
 
-    pod 'GoogleAnalytics', '3.17'
+    pod 'GoogleAnalytics'
+
     pod 'CDBKit', '~> 1.4.1'
-    pod 'CDBPlacedUI', '~> 0.0'
-    pod 'QMGeocoder', '~> 1.0'
-    pod 'LocationInfo', '~> 1.1'
-    pod 'MBProgressHUD', '~> 0.8'
+    pod 'BuchaSwift', '~> 1.0'
+
+    pod 'RxSwift', '~> 4.0'
+    pod 'ReactiveReSwift', '~> 4.0'
+
+    pod 'RealmSwift', '~> 3.0'
+
+    pod 'Fabric'
+    pod 'Crashlytics'
+
+    pod 'Parse'
+    pod 'TBParse'
+    
+    pod 'QMGeocoder'
 
     target :'EventDrivenAppIos' do
         project 'EventDrivenApp.xcodeproj'

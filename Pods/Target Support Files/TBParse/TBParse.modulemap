@@ -1,0 +1,6 @@
+framework module TBParse {
+  umbrella header "TBParse-umbrella.h"
+
+  export *
+  module * { export * }
+}

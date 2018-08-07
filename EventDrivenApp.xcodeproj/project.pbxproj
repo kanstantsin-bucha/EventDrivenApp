@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		123A4963209F01C300D81756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 123A4961209F01C300D81756 /* Main.storyboard */; };
 		123A4970209F01DB00D81756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A496F209F01DB00D81756 /* AppDelegate.swift */; };
-		123A4972209F01DB00D81756 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A4971209F01DB00D81756 /* ViewController.swift */; };
 		123A4975209F01DB00D81756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 123A4973209F01DB00D81756 /* Main.storyboard */; };
 		123A4977209F01DC00D81756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 123A4976209F01DC00D81756 /* Assets.xcassets */; };
 		123A497A209F01DC00D81756 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 123A4978209F01DC00D81756 /* LaunchScreen.storyboard */; };
@@ -68,6 +67,21 @@
 		123A4A09209F2FEB00D81756 /* ToolbarPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A49F8209F2FEA00D81756 /* ToolbarPanel.swift */; };
 		123A4A0A209F2FEB00D81756 /* PanelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A49F9209F2FEA00D81756 /* PanelFactory.swift */; };
 		123A4A0B209F2FEB00D81756 /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A49FB209F2FEA00D81756 /* TextEditor.swift */; };
+		126728852119DDF500FDD13C /* RealmIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126728712119DDF400FDD13C /* RealmIntegration.swift */; };
+		126728862119DDF500FDD13C /* Integration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126728722119DDF400FDD13C /* Integration.swift */; };
+		126728872119DDF500FDD13C /* ParseIntegartion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126728732119DDF400FDD13C /* ParseIntegartion.swift */; };
+		126728882119DDF500FDD13C /* GoogleGeocoderIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126728742119DDF400FDD13C /* GoogleGeocoderIntegration.swift */; };
+		126728892119DDF500FDD13C /* GoogleAnalyticsIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126728752119DDF400FDD13C /* GoogleAnalyticsIntegration.swift */; };
+		1267288A2119DDF500FDD13C /* CrashlyticsIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126728762119DDF400FDD13C /* CrashlyticsIntegration.swift */; };
+		1267288B2119DDF500FDD13C /* InterfaceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126728782119DDF400FDD13C /* InterfaceState.swift */; };
+		1267288C2119DDF500FDD13C /* DataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126728792119DDF400FDD13C /* DataState.swift */; };
+		1267288D2119DDF500FDD13C /* ActionTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267287B2119DDF400FDD13C /* ActionTracker.swift */; };
+		1267288E2119DDF500FDD13C /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267287C2119DDF400FDD13C /* Actions.swift */; };
+		1267288F2119DDF500FDD13C /* DataReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267287E2119DDF400FDD13C /* DataReducer.swift */; };
+		126728902119DDF500FDD13C /* InterfaceReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267287F2119DDF400FDD13C /* InterfaceReducer.swift */; };
+		126728912119DDF500FDD13C /* SettingsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126728812119DDF400FDD13C /* SettingsStorage.swift */; };
+		126728922119DDF500FDD13C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126728832119DDF500FDD13C /* ViewController.swift */; };
+		126728932119DDF500FDD13C /* AppLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126728842119DDF500FDD13C /* AppLogic.swift */; };
 		128F65B420A06F60005F9CF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128F65B320A06F60005F9CF7 /* Assets.xcassets */; };
 		128F65B720A07175005F9CF7 /* Panels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 128F65B520A07175005F9CF7 /* Panels.storyboard */; };
 		157510E572FE53A464F11FBE /* Pods_EventDrivenAppIosPods_EventDrivenAppIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC80D7DDD6D0DFDD2CF0B83 /* Pods_EventDrivenAppIosPods_EventDrivenAppIos.framework */; };
@@ -81,7 +95,6 @@
 		123A4965209F01C300D81756 /* EventDrivenAppMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EventDrivenAppMac.entitlements; sourceTree = "<group>"; };
 		123A496D209F01DB00D81756 /* EventDrivenAppIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventDrivenAppIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		123A496F209F01DB00D81756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		123A4971209F01DB00D81756 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		123A4974209F01DB00D81756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		123A4976209F01DC00D81756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		123A4979209F01DC00D81756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -141,6 +154,22 @@
 		123A49F8209F2FEA00D81756 /* ToolbarPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolbarPanel.swift; sourceTree = "<group>"; };
 		123A49F9209F2FEA00D81756 /* PanelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelFactory.swift; sourceTree = "<group>"; };
 		123A49FB209F2FEA00D81756 /* TextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditor.swift; sourceTree = "<group>"; };
+		1267286E2119DDF400FDD13C /* EventDrivenApp-bridging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventDrivenApp-bridging.h"; sourceTree = "<group>"; };
+		126728712119DDF400FDD13C /* RealmIntegration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmIntegration.swift; sourceTree = "<group>"; };
+		126728722119DDF400FDD13C /* Integration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Integration.swift; sourceTree = "<group>"; };
+		126728732119DDF400FDD13C /* ParseIntegartion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseIntegartion.swift; sourceTree = "<group>"; };
+		126728742119DDF400FDD13C /* GoogleGeocoderIntegration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleGeocoderIntegration.swift; sourceTree = "<group>"; };
+		126728752119DDF400FDD13C /* GoogleAnalyticsIntegration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAnalyticsIntegration.swift; sourceTree = "<group>"; };
+		126728762119DDF400FDD13C /* CrashlyticsIntegration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashlyticsIntegration.swift; sourceTree = "<group>"; };
+		126728782119DDF400FDD13C /* InterfaceState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceState.swift; sourceTree = "<group>"; };
+		126728792119DDF400FDD13C /* DataState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataState.swift; sourceTree = "<group>"; };
+		1267287B2119DDF400FDD13C /* ActionTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTracker.swift; sourceTree = "<group>"; };
+		1267287C2119DDF400FDD13C /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		1267287E2119DDF400FDD13C /* DataReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReducer.swift; sourceTree = "<group>"; };
+		1267287F2119DDF400FDD13C /* InterfaceReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceReducer.swift; sourceTree = "<group>"; };
+		126728812119DDF400FDD13C /* SettingsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsStorage.swift; sourceTree = "<group>"; };
+		126728832119DDF500FDD13C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		126728842119DDF500FDD13C /* AppLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogic.swift; sourceTree = "<group>"; };
 		128F65B320A06F60005F9CF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = EventDrivenAppMac/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		128F65B920A07180005F9CF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Panels.storyboard; sourceTree = "<group>"; };
 		405A9AACDDE3014DBC191E9A /* Pods-EventDrivenAppMacPods-EventDrivenAppMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventDrivenAppMacPods-EventDrivenAppMac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventDrivenAppMacPods-EventDrivenAppMac/Pods-EventDrivenAppMacPods-EventDrivenAppMac.debug.xcconfig"; sourceTree = "<group>"; };
@@ -210,8 +239,11 @@
 			isa = PBXGroup;
 			children = (
 				123A496F209F01DB00D81756 /* AppDelegate.swift */,
-				123A4971209F01DB00D81756 /* ViewController.swift */,
+				126728842119DDF500FDD13C /* AppLogic.swift */,
+				1267286F2119DDF400FDD13C /* AppLogic */,
+				126728822119DDF500FDD13C /* Views */,
 				123A4973209F01DB00D81756 /* Main.storyboard */,
+				1267286E2119DDF400FDD13C /* EventDrivenApp-bridging.h */,
 				123A4976209F01DC00D81756 /* Assets.xcassets */,
 				123A4978209F01DC00D81756 /* LaunchScreen.storyboard */,
 				123A497B209F01DC00D81756 /* Info.plist */,
@@ -358,6 +390,74 @@
 			path = TextEditorDataSource;
 			sourceTree = "<group>";
 		};
+		1267286F2119DDF400FDD13C /* AppLogic */ = {
+			isa = PBXGroup;
+			children = (
+				126728702119DDF400FDD13C /* Integration */,
+				126728772119DDF400FDD13C /* States */,
+				1267287A2119DDF400FDD13C /* Actions */,
+				1267287D2119DDF400FDD13C /* Reducers */,
+				126728802119DDF400FDD13C /* Realm */,
+			);
+			path = AppLogic;
+			sourceTree = "<group>";
+		};
+		126728702119DDF400FDD13C /* Integration */ = {
+			isa = PBXGroup;
+			children = (
+				126728712119DDF400FDD13C /* RealmIntegration.swift */,
+				126728722119DDF400FDD13C /* Integration.swift */,
+				126728732119DDF400FDD13C /* ParseIntegartion.swift */,
+				126728742119DDF400FDD13C /* GoogleGeocoderIntegration.swift */,
+				126728752119DDF400FDD13C /* GoogleAnalyticsIntegration.swift */,
+				126728762119DDF400FDD13C /* CrashlyticsIntegration.swift */,
+			);
+			path = Integration;
+			sourceTree = "<group>";
+		};
+		126728772119DDF400FDD13C /* States */ = {
+			isa = PBXGroup;
+			children = (
+				126728782119DDF400FDD13C /* InterfaceState.swift */,
+				126728792119DDF400FDD13C /* DataState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		1267287A2119DDF400FDD13C /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				1267287B2119DDF400FDD13C /* ActionTracker.swift */,
+				1267287C2119DDF400FDD13C /* Actions.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		1267287D2119DDF400FDD13C /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				1267287E2119DDF400FDD13C /* DataReducer.swift */,
+				1267287F2119DDF400FDD13C /* InterfaceReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		126728802119DDF400FDD13C /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				126728812119DDF400FDD13C /* SettingsStorage.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		126728822119DDF500FDD13C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				126728832119DDF500FDD13C /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		128F65AE20A06C28005F9CF7 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,7 +500,6 @@
 				123A4956209F01C300D81756 /* Frameworks */,
 				123A4957209F01C300D81756 /* Resources */,
 				F06A0F787A06C1B3A6151393 /* [CP] Embed Pods Frameworks */,
-				A2028ABFD0DDBD04F0F68F03 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -420,7 +519,6 @@
 				123A496A209F01DB00D81756 /* Frameworks */,
 				123A496B209F01DB00D81756 /* Resources */,
 				3DAEFFBA09CF2F4A8D3C36CC /* [CP] Embed Pods Frameworks */,
-				F347BA3A55DA60CEE6E2E8DB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -500,40 +598,39 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-EventDrivenAppIosPods-EventDrivenAppIos/Pods-EventDrivenAppIosPods-EventDrivenAppIos-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BuchaSwift-iOS/BuchaSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/CDBKit-iOS/CDBKit.framework",
 				"${BUILT_PRODUCTS_DIR}/LMGeocoderUniversal-iOS/LMGeocoderUniversal.framework",
 				"${BUILT_PRODUCTS_DIR}/LocationInfo-iOS/LocationInfo.framework",
 				"${BUILT_PRODUCTS_DIR}/QMGeocoder-iOS/QMGeocoder.framework",
-				"${BUILT_PRODUCTS_DIR}/CDBPlacedUI/CDBPlacedUI.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveReSwift-iOS/ReactiveReSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm-iOS/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift-iOS/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift-iOS/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/TBConversions/TBConversions.framework",
+				"${BUILT_PRODUCTS_DIR}/TBParse/TBParse.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BuchaSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CDBKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LMGeocoderUniversal.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LocationInfo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QMGeocoder.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CDBPlacedUI.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveReSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TBConversions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TBParse.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EventDrivenAppIosPods-EventDrivenAppIos/Pods-EventDrivenAppIosPods-EventDrivenAppIos-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A2028ABFD0DDBD04F0F68F03 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EventDrivenAppMacPods-EventDrivenAppMac/Pods-EventDrivenAppMacPods-EventDrivenAppMac-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C453022A2B16C6821440C09B /* [CP] Check Pods Manifest.lock */ = {
@@ -561,17 +658,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-EventDrivenAppMacPods-EventDrivenAppMac/Pods-EventDrivenAppMacPods-EventDrivenAppMac-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BuchaSwift/BuchaSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/BuchaSwift-macOS/BuchaSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/CDBKit-macOS/CDBKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FlatButton/FlatButton.framework",
 				"${BUILT_PRODUCTS_DIR}/Google-Analytics-for-OS-X/GoogleAnalyticsTracker.framework",
 				"${BUILT_PRODUCTS_DIR}/LMGeocoderUniversal-macOS/LMGeocoderUniversal.framework",
 				"${BUILT_PRODUCTS_DIR}/LocationInfo-macOS/LocationInfo.framework",
 				"${BUILT_PRODUCTS_DIR}/QMGeocoder-macOS/QMGeocoder.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveReSwift/ReactiveReSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveReSwift-macOS/ReactiveReSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm-macOS/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift-macOS/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift-macOS/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -608,21 +705,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F347BA3A55DA60CEE6E2E8DB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EventDrivenAppIosPods-EventDrivenAppIos/Pods-EventDrivenAppIosPods-EventDrivenAppIos-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -693,8 +775,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				123A4972209F01DB00D81756 /* ViewController.swift in Sources */,
+				126728922119DDF500FDD13C /* ViewController.swift in Sources */,
+				1267288D2119DDF500FDD13C /* ActionTracker.swift in Sources */,
+				126728872119DDF500FDD13C /* ParseIntegartion.swift in Sources */,
+				1267288B2119DDF500FDD13C /* InterfaceState.swift in Sources */,
+				126728882119DDF500FDD13C /* GoogleGeocoderIntegration.swift in Sources */,
+				1267288C2119DDF500FDD13C /* DataState.swift in Sources */,
+				1267288E2119DDF500FDD13C /* Actions.swift in Sources */,
+				126728852119DDF500FDD13C /* RealmIntegration.swift in Sources */,
+				126728932119DDF500FDD13C /* AppLogic.swift in Sources */,
 				123A4970209F01DB00D81756 /* AppDelegate.swift in Sources */,
+				1267288F2119DDF500FDD13C /* DataReducer.swift in Sources */,
+				1267288A2119DDF500FDD13C /* CrashlyticsIntegration.swift in Sources */,
+				126728912119DDF500FDD13C /* SettingsStorage.swift in Sources */,
+				126728892119DDF500FDD13C /* GoogleAnalyticsIntegration.swift in Sources */,
+				126728902119DDF500FDD13C /* InterfaceReducer.swift in Sources */,
+				126728862119DDF500FDD13C /* Integration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -907,6 +1003,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.truebucha.EventDrivenAppIos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/EventDrivenAppIos/EventDrivenApp-bridging.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -928,6 +1025,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.truebucha.EventDrivenAppIos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/EventDrivenAppIos/EventDrivenApp-bridging.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

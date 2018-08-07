@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,9 +17,44 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2u-Gp-Efk">
+                                <rect key="frame" x="146.5" y="313" width="82.5" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgH-cU-Z28">
+                                <rect key="frame" x="170" y="228" width="35" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Up"/>
+                                <connections>
+                                    <action selector="upTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TZx-fg-zCS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDT-zv-KgL">
+                                <rect key="frame" x="153" y="395" width="68" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Down"/>
+                                <connections>
+                                    <action selector="downTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OP9-nZ-8Uv"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mDT-zv-KgL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6cP-R5-bHd"/>
+                            <constraint firstItem="Z2u-Gp-Efk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OjC-dM-Uuc"/>
+                            <constraint firstItem="Z2u-Gp-Efk" firstAttribute="top" secondItem="rgH-cU-Z28" secondAttribute="bottom" constant="40" id="SYb-Ja-qxQ"/>
+                            <constraint firstItem="Z2u-Gp-Efk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lLy-2Q-NcB"/>
+                            <constraint firstItem="mDT-zv-KgL" firstAttribute="top" secondItem="Z2u-Gp-Efk" secondAttribute="bottom" constant="40" id="rvw-9y-1lp"/>
+                            <constraint firstItem="rgH-cU-Z28" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z5U-sf-7ah"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="counterLabel" destination="Z2u-Gp-Efk" id="1W1-gg-IgR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

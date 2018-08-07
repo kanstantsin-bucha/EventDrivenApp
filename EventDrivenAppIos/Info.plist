@@ -41,5 +41,35 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>Parse</key>
+    <dict>
+        <key>AppId</key>
+        <string>==Id==</string>
+        <key>ClientKey</key>
+        <string>==key==</string>
+        <key>ServerUrl</key>
+        <string>==Url==</string>
+    </dict>
+    <key>Fabric</key>
+    <dict>
+        <key>APIKey</key>
+        <string>==key==</string>
+        <key>Kits</key>
+        <array>
+            <dict>
+                <key>KitInfo</key>
+                <dict/>
+                <key>KitName</key>
+                <string>Crashlytics</string>
+            </dict>
+        </array>
+    </dict>
+    <key>Google</key>
+    <dict>
+        <key>GA-TrackingID</key>
+        <string>==ID==</string>
+        <key>GeocoderApiKey</key>
+        <string>==key==</string>
+    </dict>
 </dict>
 </plist>

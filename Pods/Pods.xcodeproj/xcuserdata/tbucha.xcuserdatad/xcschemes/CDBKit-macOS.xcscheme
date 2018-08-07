@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "06F4BE7494E45B2DA713B691"
+               BlueprintIdentifier = "000000003940"
                BuildableName = "CDBKit.framework"
                BlueprintName = "CDBKit-macOS"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "06F4BE7494E45B2DA713B691"
+            BlueprintIdentifier = "000000003940"
             BuildableName = "CDBKit.framework"
             BlueprintName = "CDBKit-macOS"
             ReferencedContainer = "container:Pods.xcodeproj">

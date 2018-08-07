@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1571D13FD0E6732D770CD06B"
+               BlueprintIdentifier = "000000003C20"
                BuildableName = "GoogleAnalyticsTracker.framework"
                BlueprintName = "Google-Analytics-for-OS-X"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1571D13FD0E6732D770CD06B"
+            BlueprintIdentifier = "000000003C20"
             BuildableName = "GoogleAnalyticsTracker.framework"
             BlueprintName = "Google-Analytics-for-OS-X"
             ReferencedContainer = "container:Pods.xcodeproj">

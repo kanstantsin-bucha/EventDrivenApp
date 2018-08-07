@@ -1,6 +1,0 @@
-framework module CDBPlacedUI {
-  umbrella header "CDBPlacedUI-umbrella.h"
-
-  export *
-  module * { export * }
-}

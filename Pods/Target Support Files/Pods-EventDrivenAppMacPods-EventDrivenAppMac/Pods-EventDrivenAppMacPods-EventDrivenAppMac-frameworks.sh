@@ -1,13 +1,18 @@
 #!/bin/sh
 set -e
-KG_FILE="${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Pods-EventDrivenAppMacPods-EventDrivenAppMac-frameworks-Installation-Flag"
-if [ -f "$KG_FILE" ]; then exit 0; fi
-mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
-touch "$KG_FILE"
+set -u
+set -o pipefail
+
+if [ -z ${FRAMEWORKS_FOLDER_PATH+x} ]; then
+    # If FRAMEWORKS_FOLDER_PATH is not set, then there's nowhere for us to copy
+    # frameworks to, so exit 0 (signalling the script phase was successful).
+    exit 0
+fi
 
 echo "mkdir -p ${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
+COCOAPODS_PARALLEL_CODE_SIGN="${COCOAPODS_PARALLEL_CODE_SIGN:-false}"
 SWIFT_STDLIB_PATH="${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}"
 
 # Used as a return value for each invocation of `strip_invalid_archs` function.
@@ -96,10 +101,10 @@ install_dsym() {
 
 # Signs a framework with the provided identity
 code_sign_if_enabled() {
-  if [ -n "${EXPANDED_CODE_SIGN_IDENTITY}" -a "${CODE_SIGNING_REQUIRED}" != "NO" -a "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
+  if [ -n "${EXPANDED_CODE_SIGN_IDENTITY}" -a "${CODE_SIGNING_REQUIRED:-}" != "NO" -a "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
     # Use the current code_sign_identitiy
     echo "Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}"
-    local code_sign_cmd="/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS} --preserve-metadata=identifier,entitlements '$1'"
+    local code_sign_cmd="/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS:-} --preserve-metadata=identifier,entitlements '$1'"
 
     if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
       code_sign_cmd="$code_sign_cmd &"
@@ -138,30 +143,30 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/BuchaSwift/BuchaSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BuchaSwift-macOS/BuchaSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CDBKit-macOS/CDBKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FlatButton/FlatButton.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Google-Analytics-for-OS-X/GoogleAnalyticsTracker.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LMGeocoderUniversal-macOS/LMGeocoderUniversal.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LocationInfo-macOS/LocationInfo.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/QMGeocoder-macOS/QMGeocoder.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ReactiveReSwift/ReactiveReSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Realm/Realm.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ReactiveReSwift-macOS/ReactiveReSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Realm-macOS/Realm.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift-macOS/RealmSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift-macOS/RxSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/BuchaSwift/BuchaSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BuchaSwift-macOS/BuchaSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CDBKit-macOS/CDBKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FlatButton/FlatButton.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Google-Analytics-for-OS-X/GoogleAnalyticsTracker.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LMGeocoderUniversal-macOS/LMGeocoderUniversal.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LocationInfo-macOS/LocationInfo.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/QMGeocoder-macOS/QMGeocoder.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ReactiveReSwift/ReactiveReSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Realm/Realm.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ReactiveReSwift-macOS/ReactiveReSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Realm-macOS/Realm.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift-macOS/RealmSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift-macOS/RxSwift.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
